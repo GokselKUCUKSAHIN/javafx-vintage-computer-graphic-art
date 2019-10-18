@@ -9,3 +9,9 @@
 
 # Video Link
 ## https://youtu.be/ANXm1cnFxQI
+
+# Update (18.10.2019)
+
+![image](https://user-images.githubusercontent.com/33639948/67124919-439e2100-f1fc-11e9-81e7-09f41862c277.png)
+
+## Kept you waiting Huh!
