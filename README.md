@@ -8,9 +8,12 @@
 ![image](https://user-images.githubusercontent.com/33639948/67120453-003eb500-f1f2-11e9-978c-d80de231bb5c.png)
 
 # Video Link
-## https://youtu.be/ANXm1cnFxQI
+## https://youtu.be/ANXm1cnFxQI (OLD VERSION)
 
 # Update (18.10.2019)
+
+## Speed Control added: F9 Speed Down, F10 Speed Up
+## Perlin Noise Control: Toggle F11
 
 ![image](https://user-images.githubusercontent.com/33639948/67124919-439e2100-f1fc-11e9-81e7-09f41862c277.png)
 
