@@ -61,7 +61,7 @@ public class Segment
     {
         calculateNextMove();
         // increment progress for next move
-        progress += 0.5;
+        progress += Main.speed; //0.5
     }
 
     public void setProgress(double progress)

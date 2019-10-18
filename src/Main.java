@@ -17,7 +17,11 @@ public class Main extends Application
     private static final String title = "JellyBeanci Vintage Computer Art";
     public static final int width = 800;
     public static final int height = 800;
+    public static double speed = 0.5;
     private static Color backcolor = Color.rgb(51, 51, 51);
+
+    private boolean perlin = false;
+    private double xoff = Utils.getRandom(0, 123456); //nice random range
 
     private static Timeline update;
 
@@ -27,9 +31,9 @@ public class Main extends Application
         Pane root = new Pane();
         child = root.getChildren();
         //
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 100; i++)
         {
-            new Segment(i * 1.4);
+            new Segment(i * 0.4); // i * 1.4
         }
 
         for (Segment segment : Segment.segments)
@@ -58,6 +62,30 @@ public class Main extends Application
                     System.out.println("Child Count: " + child.size());
                     break;
                 }
+                case F9:
+                {
+                    // Slow Down
+                    if (speed >= 0.1 && !perlin)
+                    {
+                        speed -= 0.03;
+                    }
+                    break;
+                }
+                case F10:
+                {
+                    // Speed up
+                    if (speed <= 1.5 && !perlin)
+                    {
+                        speed += 0.03;
+                    }
+                    break;
+                }
+                case F11:
+                {
+                    // Perlin mode
+                    this.perlin = !perlin;
+                    break;
+                }
             }
         });
         update = new Timeline(new KeyFrame(Duration.millis(16), e -> {
@@ -66,6 +94,11 @@ public class Main extends Application
             for (Segment segment : Segment.segments)
             {
                 segment.update();
+            }
+            if (perlin)
+            {
+                speed = SimpleNoise.noise(xoff, 0, 0.1, 1, true);
+                xoff += 0.03;
             }
         }));
         update.setCycleCount(Timeline.INDEFINITE);
